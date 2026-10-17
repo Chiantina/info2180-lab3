@@ -60,9 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    board.forEach(function (square) {
+    board.forEach(function (square, index) {
         square.addEventListener("mouseover", function () {
-            square.classList.add("hover");
+            if (!gameOver && gameState[index] === "") {
+                square.classList.add("hover");
+            }
         });
 
         square.addEventListener("mouseout", function () {
