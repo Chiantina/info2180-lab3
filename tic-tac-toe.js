@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     board.forEach(function (square, index) {
         square.addEventListener("click", function () {
-            if (gameOver) {
+            if (gameOver || gameState[index] !== "") {
                 return;
             }
 
